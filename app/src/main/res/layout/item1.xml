@@ -1,0 +1,66 @@
+<!-- file item_product.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow"
+    android:orientation="horizontal"
+    android:layout_weight="1"
+    android:layout_margin="20dp">
+    <LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_weight="1">
+    <!-- Hình ảnh sản phẩm -->
+    <ImageView
+        android:id="@+id/image_product"
+        android:layout_width="199dp"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!-- Tên sản phẩm -->
+            <TextView
+                android:id="@+id/text_product_name"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Tên sản phẩm"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Giá sản phẩm -->
+            <TextView
+                android:id="@+id/text_product_price"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Giá: $100"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <!-- Đánh giá sản phẩm -->
+            <TextView
+                android:id="@+id/rating_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="8dp" />
+
+    </LinearLayout>
+</LinearLayout>

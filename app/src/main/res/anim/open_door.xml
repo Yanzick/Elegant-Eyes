@@ -1,0 +1,10 @@
+<!-- res/anim/door_open_animation.xml -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <rotate
+        android:duration="800"
+        android:fromDegrees="0"
+        android:toDegrees="-90"
+        android:pivotX="0%"
+        android:pivotY="50%"
+        android:interpolator="@android:interpolator/accelerate_decelerate"/>
+</set>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Trong res/values/dimens.xml -->
+<resources>
+    <dimen name="custom_button_stroke_width">15dp</dimen>
+    <color name="custom_button_stroke_color">#FF000000</color>
+    <dimen name="item_spacing">8dp</dimen>
+</resources>

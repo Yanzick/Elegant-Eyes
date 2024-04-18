@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="184dp"
+        android:layout_height="177dp"
+        android:layout_marginLeft="113dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/logo" />
+
+    <LinearLayout
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elegant Eyes"
+            android:gravity="center"
+            android:textColor="@color/blue"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Xin chào"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+
+        android:layout_width="158dp"
+        android:layout_height="62dp"
+        android:layout_below="@id/welcome"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="49dp"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:fontFamily="@font/font1"
+        android:gravity="center"
+        android:text="Login" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLogin"
+        style="@style/CustomOutlinedButton"
+        android:layout_width="159dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/login"
+        android:layout_marginLeft="128dp"
+        android:text="Register" />
+
+</RelativeLayout>

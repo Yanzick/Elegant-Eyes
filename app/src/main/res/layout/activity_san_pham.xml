@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpage2"
+            android:layout_width="match_parent"
+            android:layout_height="350dp" />
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/Anh"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:ci_drawable="@drawable/bg_indicator_3"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/viewpage2" />
+    </RelativeLayout>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="30dp"
+            android:text="Login"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"/>
+        <TextView
+            android:id="@+id/Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Login"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/Mota"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/logintxt"
+                android:layout_marginLeft="18dp"
+                android:background="@drawable/rb1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Mô tả:"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font1" />
+
+                <TextView
+                    android:id="@+id/MT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Mô tả:"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </ScrollView>
+        <Button
+            android:id="@+id/add"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="313dp"
+            android:layout_height="62dp"
+            android:layout_below="@id/welcome"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="49dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/font1"
+            android:text="Thêm vào giỏ hàng"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Trong res/values/styles.xml -->
+    <style name="CustomOutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:strokeWidth">@dimen/custom_button_stroke_width</item> <!-- Độ dày của viền -->
+        <item name="android:strokeColor">@color/custom_button_stroke_color</item> <!-- Sử dụng màu của viền -->
+        <item name="android:textColor">@color/blue</item> <!-- Màu văn bản -->
+        <item name="android:textSize">16sp</item> <!-- Kích thước văn bản -->
+        <item name="android:fontFamily">@font/font1</item> <!-- Font chữ -->
+        <!-- Các thuộc tính khác của nút OutlinedButton -->
+    </style>
+    <style name="CustomOutlinedButton1" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/white</item> <!-- Màu văn bản -->
+        <item name="android:textSize">16sp</item> <!-- Kích thước văn bản -->
+        <item name="android:fontFamily">@font/font1</item> <!-- Font chữ -->
+        <item name="android:background">@drawable/button</item>
+        <!-- Các thuộc tính khác của nút OutlinedButton -->
+    </style>
+</resources>

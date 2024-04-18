@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="30dp"
+        android:fontFamily="@font/font1"
+        android:textColor="@color/white"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/nameuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="50dp"
+            android:fontFamily="@font/font1"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="60dp"
+        app:cardElevation="10dp"
+
+        android:layout_marginStart="20dp"
+        android:background="@drawable/rb1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            app:srcCompat="@drawable/logo"
+            android:layout_width="137dp"
+
+            android:layout_height="137dp"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/logout"
+                android:background="@drawable/off"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="150dp" />
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="50dp"
+            android:layout_margin="35dp"
+            app:cardElevation="15dp"
+
+            android:layout_marginStart="20dp"
+            android:background="@drawable/rb1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="25dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Họ và Tên:"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font1"
+                        android:textColor="@color/blue"
+                        android:layout_marginTop="5dp"
+/>
+
+                    <TextView
+                        android:id="@+id/Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font1"
+                        android:text="Name"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:gravity="end"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Số điện thoại:"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/font1"
+                        android:textColor="@color/blue"
+                        android:layout_marginTop="5dp" />
+
+                    <TextView
+                        android:id="@+id/STD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font1"
+                        android:text="STD"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:gravity="end"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/font1"
+                        android:text="Email:"
+                        android:textColor="@color/blue"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/Email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font1"
+                        android:text="Email"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:gravity="end"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="98dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/font1"
+                        android:text="Địa chỉ:"
+                        android:textColor="@color/blue"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/Address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font1"
+                        android:text="Địa chỉ"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:gravity="end"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/profile"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+
+            android:layout_width="236dp"
+            android:layout_height="62dp"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/blue"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Edit profile"
+            android:textColor="@color/white" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/repass"
+            style="@style/CustomOutlinedButton"
+            android:layout_width="236dp"
+            android:layout_height="62dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Đổi mật khẩu"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,18 @@
+<vector
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:tint="#262626">
+
+    <!-- Thân chìa khóa -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,2C8.13,2 5,5.13 5,9v3h2V9c0,-2.76 2.24,-5 5,-5s5,2.24 5,5v3h2V9c0,-3.87 -3.13,-7 -7,-7zM12,4c-2.21,0 -4,1.79 -4,4v3h8V8c0,-2.21 -1.79,-4 -4,-4z"/>
+
+    <!-- Chìa khóa -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,15c-1.66,0 -3,-1.34 -3,-3s1.34,-3 3,-3 3,1.34 3,3 -1.34,3 -3,3zM12,11c-0.66,0 -1.19,0.56 -1.19,1.25s0.53,1.25 1.19,1.25 1.19,-0.56 1.19,-1.25 -0.53,-1.25 -1.19,-1.25z"/>
+</vector>

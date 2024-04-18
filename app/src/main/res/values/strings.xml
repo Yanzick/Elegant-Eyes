@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Elegant Eyes</string>
+    <string name="total_price_format">%dĐ</string>
+
+</resources>
