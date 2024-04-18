@@ -1,13 +1,16 @@
 package com.example.store.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,12 +24,16 @@ import com.example.store.Shopping1;
 import com.example.store.Shopping1Adapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class ShoppingFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -69,6 +76,15 @@ public class ShoppingFragment extends Fragment {
         Buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<String> checkedProductIDs = productAdapter.getCheckedItemIDs();
+
+                // Gọi phương thức để thêm đơn hàng vào Firestore
+                addOrderToFirestore(userEmail, checkedProductIDs);
+
+                loadProducts(databaseHelper.getAllIDs());
+
+                // Hiển thị thông báo cho người dùng
+                Custom();
             }
         });
         Delete.setOnClickListener(new View.OnClickListener() {
@@ -198,5 +214,77 @@ public class ShoppingFragment extends Fragment {
                     }
                 });
     }
+    private void Custom() {
+        // Inflate custom toast layout
+        View layout = getLayoutInflater().inflate(R.layout.toast,
+                (ViewGroup) requireActivity().findViewById(R.id.toast));
+
+        // Creating the Toast
+        Toast toast = new Toast(requireActivity().getApplicationContext());
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setView(layout);
+
+        // Create a grey background view
+        View greyBackground = new View(requireActivity().getApplicationContext());
+        greyBackground.setBackgroundColor(Color.parseColor("#80000000")); // Màu xám với độ trong suốt
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        greyBackground.setLayoutParams(params);
+
+        // Add the grey background view behind the toast
+        ViewGroup decorView = (ViewGroup) requireActivity().getWindow().getDecorView();
+        decorView.addView(greyBackground);
+
+        // Show the toast
+        toast.show();
+
+        // Remove the grey background view after the toast is hidden
+        toast.getView().addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+            @Override
+            public void onViewAttachedToWindow(View v) {}
+
+            @Override
+            public void onViewDetachedFromWindow(View v) {
+                decorView.removeView(greyBackground);
+            }
+        });
+    }
+    private void addOrderToFirestore(String userEmail, List<String> productIDs) {
+        // Tạo một collection mới trong Firestore để lưu trữ các đơn hàng
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String orderId = generateRandomOrderId(); // Tạo mã đơn hàng ngẫu nhiên
+        DocumentReference orderRef = db.collection("Product").document(orderId); // Tạo document mới cho đơn hàng
+
+        // Tạo một object Order chứa các thông tin cần thiết
+        Map<String, Object> orderData = new HashMap<>();
+        orderData.put("Email", userEmail); // Thêm thông tin về người mua
+        orderData.put("ProductIDs", productIDs); // Thêm danh sách ID sản phẩm
+
+        // Thêm đơn hàng vào Firestore
+        orderRef.set(orderData)
+                .addOnSuccessListener(aVoid -> {
+                    // Xử lý khi thêm đơn hàng thành công
+                    showToast("Đặt hàng thành công");
+                })
+                .addOnFailureListener(e -> {
+                    // Xử lý khi thêm đơn hàng thất bại
+                    showToast("Đặt hàng thất bại: " + e.getMessage());
+                });
+    }
+    private String generateRandomOrderId() {
+        // Tạo một chuỗi ngẫu nhiên gồm 4 ký tự số
+        Random random = new Random();
+        StringBuilder orderIdBuilder = new StringBuilder();
+        for (int i = 0; i < 4; i++) {
+            orderIdBuilder.append(random.nextInt(10)); // Thêm một ký tự số ngẫu nhiên vào chuỗi
+        }
+        return orderIdBuilder.toString();
+    }
+    private void showToast(String message) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+
 
 }

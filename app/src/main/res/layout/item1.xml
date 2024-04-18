@@ -39,21 +39,47 @@
                 android:textStyle="bold" />
 
             <!-- Giá sản phẩm -->
-            <TextView
-                android:id="@+id/text_product_price"
-                android:layout_width="221dp"
+            <LinearLayout
+                android:layout_width="276dp"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Giá: $100"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-            <!-- Đánh giá sản phẩm -->
+                <TextView
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Giá: "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/text_product_price"
+                    android:layout_width="138dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Giá: $100"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="276dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="Số lượng hiện có: "/>
             <TextView
                 android:id="@+id/rating_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp" />
+            </LinearLayout>
         </LinearLayout>
         <CheckBox
             android:id="@+id/checkBox"

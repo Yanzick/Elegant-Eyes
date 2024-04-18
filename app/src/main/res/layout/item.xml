@@ -28,6 +28,19 @@
         android:padding="8dp" />
 
     <!-- Giá sản phẩm -->
+    <LinearLayout
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Giá: "
+            android:textColor="@color/black"
+            android:textSize="14sp" />
     <TextView
         android:id="@+id/text_product_price"
         android:layout_width="221dp"
@@ -36,12 +49,25 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         android:padding="8dp" />
+    </LinearLayout>
 
     <!-- Đánh giá sản phẩm -->
-    <TextView
-        android:id="@+id/rating_product"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp" />
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Số lượng hiện có: "/>
+        <TextView
+            android:id="@+id/rating_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp" />
+    </LinearLayout>
 
 </LinearLayout>

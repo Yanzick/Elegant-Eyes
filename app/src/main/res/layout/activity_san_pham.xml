@@ -87,19 +87,39 @@
             </LinearLayout>
 
         </ScrollView>
+    <LinearLayout
+
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/logintxt"
+        android:layout_marginTop="49dp"
+        android:layout_marginLeft="18dp">
+
+        <EditText
+            android:id="@+id/SL"
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+
+            android:hint="Số lượng"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/add"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="313dp"
-            android:layout_height="62dp"
+            android:layout_width="219dp"
+            android:layout_height="67dp"
+            android:layout_weight="1"
             android:layout_below="@id/welcome"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginTop="49dp"
+
             android:backgroundTint="@color/blue"
             android:fontFamily="@font/font1"
             android:text="Thêm vào giỏ hàng"
             android:textColor="@color/white" />
     </LinearLayout>
 
-
+    </LinearLayout>
 </ScrollView>

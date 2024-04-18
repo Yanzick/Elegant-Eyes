@@ -10,6 +10,7 @@ public class Shopping1 implements Serializable {
     private String ID;
     private String MT;
     private boolean isChecked;
+    private int quantity;
 
     public Shopping1(String name, String imageUrl, int price, String rating,String ID,String MT) {
         this.name = name;
@@ -19,6 +20,7 @@ public class Shopping1 implements Serializable {
         this.ID = ID;
         this. MT = MT;
         this.isChecked = false;
+        this.quantity = 1;
     }
 
     public String getName() {
@@ -74,5 +76,12 @@ public class Shopping1 implements Serializable {
 
     public void setChecked(boolean checked) {
         isChecked = checked;
+    }
+    public int getQuantity() { // Phương thức getter cho quantity
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) { // Phương thức setter cho quantity
+        this.quantity = quantity;
     }
 }
