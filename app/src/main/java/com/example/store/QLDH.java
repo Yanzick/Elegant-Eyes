@@ -1,14 +1,20 @@
 package com.example.store;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class QLDH {
 
-import android.os.Bundle;
+    private String name;
 
-public class QLDH extends AppCompatActivity {
+    public QLDH(String name) {
+        this.name = name;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qldh);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
