@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="381dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/seach"
+            android:queryHint="Tìm kiếm"
+            app:iconifiedByDefault="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvMuaSam"
+        android:layout_width="match_parent"
+        android:layout_height="558dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:id="@+id/ADD"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+
+        android:layout_width="158dp"
+        android:layout_height="62dp"
+        android:layout_below="@id/welcome"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:fontFamily="@font/font1"
+        android:gravity="center"
+        android:text="Thêm sản phẩm" />
+</LinearLayout>

@@ -255,11 +255,12 @@ public class ShoppingFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String orderId = generateRandomOrderId(); // Tạo mã đơn hàng ngẫu nhiên
         DocumentReference orderRef = db.collection("Product").document(orderId); // Tạo document mới cho đơn hàng
-
+        int totalOrderPrice = totalSelectedPrice;
         // Tạo một object Order chứa các thông tin cần thiết
         Map<String, Object> orderData = new HashMap<>();
         orderData.put("Email", userEmail); // Thêm thông tin về người mua
         orderData.put("ProductIDs", productIDs); // Thêm danh sách ID sản phẩm
+        orderData.put("TotalPrice", totalOrderPrice);
 
         // Thêm đơn hàng vào Firestore
         orderRef.set(orderData)
@@ -273,14 +274,29 @@ public class ShoppingFragment extends Fragment {
                 });
     }
     private String generateRandomOrderId() {
-        // Tạo một chuỗi ngẫu nhiên gồm 4 ký tự số
-        Random random = new Random();
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         StringBuilder orderIdBuilder = new StringBuilder();
-        for (int i = 0; i < 4; i++) {
-            orderIdBuilder.append(random.nextInt(10)); // Thêm một ký tự số ngẫu nhiên vào chuỗi
+        Random random = new Random();
+        boolean hasLetter = false;
+        boolean hasNumber = false;
+        for (int i = 0; i < 6; i++) {
+            char randomChar = characters.charAt(random.nextInt(characters.length()));
+            if (Character.isLetter(randomChar)) {
+                hasLetter = true;
+            } else if (Character.isDigit(randomChar)) {
+                hasNumber = true;
+            }
+            orderIdBuilder.append(randomChar);
+        }
+        // Kiểm tra xem chuỗi kết quả có chứa cả chữ cái và số không
+        if (!hasLetter || !hasNumber) {
+            // Nếu không có cả chữ cái và số, gọi lại phương thức để tạo mã mới
+            return generateRandomOrderId();
         }
         return orderIdBuilder.toString();
     }
+
+
     private void showToast(String message) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
