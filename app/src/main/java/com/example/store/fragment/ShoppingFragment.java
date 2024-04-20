@@ -258,6 +258,7 @@ public class ShoppingFragment extends Fragment {
         int totalOrderPrice = totalSelectedPrice;
         // Tạo một object Order chứa các thông tin cần thiết
         Map<String, Object> orderData = new HashMap<>();
+        orderData.put("ID", orderId);
         orderData.put("Email", userEmail); // Thêm thông tin về người mua
         orderData.put("ProductIDs", productIDs); // Thêm danh sách ID sản phẩm
         orderData.put("TotalPrice", totalOrderPrice);

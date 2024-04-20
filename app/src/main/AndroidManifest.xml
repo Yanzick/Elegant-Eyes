@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Store"
         tools:targetApi="31">
         <activity
+            android:name=".ChiTietDonHang"
+            android:exported="false" />
+        <activity
             android:name=".ChiTietKhachHang"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".QLKHMain"
             android:exported="false" />
         <activity
-            android:name=".QLDH"
+            android:name=".QLDHMain"
             android:exported="false" />
         <activity
             android:name=".QLSP"
