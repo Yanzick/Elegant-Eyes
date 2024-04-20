@@ -10,7 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/tab_layout" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_cardview"
+        android:layout_above="@id/tab_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp">
 
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/facebook"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            />
+
+    </androidx.cardview.widget.CardView>
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"

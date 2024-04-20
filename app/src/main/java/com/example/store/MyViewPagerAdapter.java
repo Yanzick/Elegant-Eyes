@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.store.fragment.HomeFragment;
-import com.example.store.fragment.SettingFragment;
 import com.example.store.fragment.ShoppingFragment;
 import com.example.store.fragment.UserFragment;
 

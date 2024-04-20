@@ -57,13 +57,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <ImageButton
-                android:id="@+id/logout"
-                android:background="@drawable/off"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginLeft="150dp" />
+
         </LinearLayout>
         <Button
             android:id="@+id/SP"

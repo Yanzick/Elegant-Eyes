@@ -29,7 +29,16 @@ public class Admin extends AppCompatActivity {
         emailEditText = findViewById(R.id.Email);
         passwordEditText = findViewById(R.id.Pass);
         Button loginButton = findViewById(R.id.login);
+        Button Back = findViewById(R.id.Back);
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Admin.this, MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
+            }
+        });
         // Thiết lập sự kiện click cho nút đăng nhập
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
