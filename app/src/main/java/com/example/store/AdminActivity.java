@@ -41,5 +41,14 @@ public class AdminActivity extends AppCompatActivity {
 
             }
         });
+        KH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AdminActivity.this, QLKHMain.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }

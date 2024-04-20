@@ -16,10 +16,13 @@
         android:theme="@style/Theme.Store"
         tools:targetApi="31">
         <activity
+            android:name=".ChiTietKhachHang"
+            android:exported="false" />
+        <activity
             android:name=".ADDSP"
             android:exported="false" />
         <activity
-            android:name=".QLHK"
+            android:name=".QLKHMain"
             android:exported="false" />
         <activity
             android:name=".QLDH"
