@@ -42,7 +42,6 @@ public class QLDHAdapter extends RecyclerView.Adapter<QLDHAdapter.BMIView> {
         if (dh == null) {
             return;
         }
-
         holder.tvSanPham.setText(dh.getName());
 
     }

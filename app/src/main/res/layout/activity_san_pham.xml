@@ -96,15 +96,7 @@
         android:layout_marginTop="49dp"
         android:layout_marginLeft="18dp">
 
-        <EditText
-            android:id="@+id/SL"
-            android:layout_width="wrap_content"
-            android:layout_height="67dp"
 
-            android:hint="Số lượng"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            android:textStyle="bold" />
 
         <Button
             android:id="@+id/add"

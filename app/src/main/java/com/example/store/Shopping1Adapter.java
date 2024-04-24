@@ -30,10 +30,15 @@ public class Shopping1Adapter extends RecyclerView.Adapter<Shopping1Adapter.View
         this.context = context;
         this.itemList = itemList;
     }
+
     public void setData(List<Shopping1> productList) {
+        for (Shopping1 item : productList) {
+            item.setChecked(false); // Đặt isChecked của mỗi sản phẩm thành false
+        }
         this.itemList = productList;
         notifyDataSetChanged(); // Cập nhật giao diện sau khi thay đổi dữ liệu
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -44,7 +49,7 @@ public class Shopping1Adapter extends RecyclerView.Adapter<Shopping1Adapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Shopping1 item = itemList.get(position);
-        if (item == null){
+        if (item == null) {
             return;
         }
         holder.txtName.setText(item.getName());
@@ -58,6 +63,10 @@ public class Shopping1Adapter extends RecyclerView.Adapter<Shopping1Adapter.View
                 onClickGoto(item);
             }
         });
+
+        // Đặt trạng thái của checkbox dựa trên trạng thái của sản phẩm
+        holder.checkbox.setChecked(item.isChecked());
+
         holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -67,8 +76,8 @@ public class Shopping1Adapter extends RecyclerView.Adapter<Shopping1Adapter.View
                 }
             }
         });
-
     }
+
     private void onClickGoto(Shopping1 item){
         Intent intent =  new Intent(context, SanPham1.class);
         Bundle bundle = new Bundle();
@@ -113,5 +122,14 @@ public class Shopping1Adapter extends RecyclerView.Adapter<Shopping1Adapter.View
         }
         return checkedIDs;
     }
+
+    public void uncheckAllCheckboxes() {
+        // Duyệt qua từng item trong danh sách và hủy chọn checkbox tương ứng
+        for (Shopping1 item : itemList) {
+            item.setChecked(false);
+        }
+        notifyDataSetChanged(); // Thông báo cho RecyclerView cập nhật giao diện
+    }
+
 }
 

@@ -91,10 +91,13 @@ public class ShoppingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 List<String> checkedIDs = productAdapter.getCheckedItemIDs();
+
                 for (String id : checkedIDs) {
                     databaseHelper.deleteProduct(id);
                 }
 
+                productAdapter.uncheckAllCheckboxes();
+                updateTotalPrice();
                 // Cập nhật lại RecyclerView
                 loadProducts(databaseHelper.getAllIDs());
             }
@@ -110,24 +113,26 @@ public class ShoppingFragment extends Fragment {
         productAdapter.setOnCheckboxChangedListener(new Shopping1Adapter.OnCheckboxChangedListener() {
             @Override
             public void onCheckboxChanged(String productId, boolean isChecked) {
-                // Lấy giá của sản phẩm được chọn
                 int price = getProductPrice(productId);
-                // Cập nhật tổng giá trị dựa trên trạng thái của checkbox
                 if (isChecked) {
-                    totalSelectedPrice += price;
+                    totalSelectedPrice += price; // Nếu sản phẩm được chọn, cộng thêm giá trị của sản phẩm vào tổng
                 } else {
-                    totalSelectedPrice -= price;
+                    totalSelectedPrice -= price; // Nếu sản phẩm bị hủy chọn, trừ đi giá trị của sản phẩm khỏi tổng
+                }
+                // Đảm bảo rằng giá trị tổng không bao giờ âm
+                if (totalSelectedPrice < 0) {
+                    totalSelectedPrice = 0;
                 }
                 // Cập nhật TextView để hiển thị tổng giá trị mới
                 totalPriceTextView.setText(getString(R.string.total_price_format, totalSelectedPrice));
             }
+
         });
 
         // Các phần còn lại của onViewCreated() ...
     }
     private void loadProducts(List<String> idList) {
         productList.clear(); // Xóa danh sách sản phẩm hiện tại trước khi tải lại dữ liệu mới
-
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         for (String id : idList) {
@@ -300,6 +305,16 @@ public class ShoppingFragment extends Fragment {
 
     private void showToast(String message) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+    }
+    private void updateTotalPrice() {
+        totalSelectedPrice = 0; // Đặt lại giá tổng về 0
+        for (Shopping1 product : productList) {
+            if (product.isChecked()) {
+                totalSelectedPrice += product.getPrice();
+            }
+        }
+        // Cập nhật TextView để hiển thị tổng giá trị mới
+        totalPriceTextView.setText(getString(R.string.total_price_format, totalSelectedPrice));
     }
 
 
